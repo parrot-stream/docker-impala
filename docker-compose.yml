@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: mcapitanio/impala:2.8.0-cdh5.11.1
+    image: mcapitanio/impala:latest
     networks:
     - hadoop
     external_links:
