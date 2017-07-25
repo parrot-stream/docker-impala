@@ -25,8 +25,8 @@ WORKDIR /
 ADD etc/supervisord.conf /etc/
 ADD etc/hadoop/conf/core-site.xml /etc/impala/conf/
 ADD etc/hadoop/conf/hdfs-site.xml /etc/impala/conf/
+ADD etc/hadoop/conf/mapred-site.xml /etc/impala/conf/
 ADD etc/impala/conf/hive-site.xml /etc/impala/conf/
-ADD etc/impala/conf/hbase-site.xml /etc/impala/conf/
 
 # Various helper scripts
 ADD bin/start-impala.sh /

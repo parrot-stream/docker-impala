@@ -24,7 +24,7 @@ Stop with Docker Compose:
 
 Setting the project name to *parrot* with the **-p** option is useful to share the network created with the containers coming from other Parrot docker-compose.yml configurations.
 
-IMPORTANT: To run this Docker you also need to pull the [*Hive*](https://hub.docker.com/r/parrotstream/hive/) and [*Hadoop*](https://hub.docker.com/r/parrotstream/hadoop/) images and start them before starting Impala: Impala searches for the Hive Metastore and for Hadoop HDFS.
+**IMPORTANT**: To run this Docker you also need to pull the [*Hive*](https://hub.docker.com/r/parrotstream/hive/) and [*Hadoop*](https://hub.docker.com/r/parrotstream/hadoop/) images and start them before starting Impala: Impala searches for the Hive Metastore and for Hadoop HDFS.
 
 Once started you'll be able to access to the following UIs:
 
