@@ -4,9 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: mcapitanio/impala:2.8.0-cdh5.11.1
+    image: parrotstream/impala:2.8.0-cdh5.11.1
     networks:
-    - hadoop
+    - parrot
     external_links:
     - hadoop
     - hive
@@ -15,17 +15,14 @@ services:
     ports:
     - 21000:21000
     - 21050:21050
-    - 22000:22000
-    - 23000:23000
-    - 24000:24000
+    - 25000:25000
     - 25010:25010
-    - 26000:26000
-    - 28000:28000
+    - 25020:25020
 volumes:
   impala_logs: null
 networks:
   default:
     external:
-      name: hadoop
-  hadoop:
+      name: parrot
+  parrot:
     driver: bridge
