@@ -4,9 +4,7 @@ ___
 ### Description
 ___
 
-This image runs [*Apache Impala*](https://impala.incubator.apache.org/) on HDFS.
-
-The *latest* tag of this image is build with the Cloudera Impala distribution.
+This image runs [*Cloudera Impala*](https://www.cloudera.com/products/open-source/apache-hadoop/impala.html) distribution on HDFS.
 
 You can pull it with:
 
@@ -24,8 +22,6 @@ Stop with Docker Compose:
 
 Setting the project name to *parrot* with the **-p** option is useful to share the network created with the containers coming from other Parrot docker-compose.yml configurations.
 
-**IMPORTANT**: To run this Docker you also need to pull the [*Hive*](https://hub.docker.com/r/parrotstream/hive/) and [*Hadoop*](https://hub.docker.com/r/parrotstream/hadoop/) images and start them before starting Impala: Impala searches for the Hive Metastore and for Hadoop HDFS.
-
 Once started you'll be able to access to the following UIs:
 
 | **Impala Web UIs**           |**URL**                    |
@@ -36,4 +32,5 @@ Once started you'll be able to access to the following UIs:
 
 ### Available tags:
 
-- Apache Impala 2.8.0-cdh5.11.1 ([latest](https://github.com/parrot-stream/docker-impala/blob/latest/Dockerfile), [2.8.0-cdh5.11.1](https://github.com/parrot-stream/docker-impala/blob/2.8.0-cdh5.11.1/Dockerfile))
+- Apache Impala 2.8.0-cdh5.15.1 ([latest](https://github.com/parrot-stream/docker-impala/blob/latest/Dockerfile), [2.12.0-cdh5.15.1](https://github.com/parrot-stream/docker-impala/blob/2.12.0-cdh5.15.1/Dockerfile))
+- Apache Impala 2.8.0-cdh5.11.1 ([2.8.0-cdh5.11.1](https://github.com/parrot-stream/docker-impala/blob/2.8.0-cdh5.11.1/Dockerfile))

@@ -1,5 +1,54 @@
 version: '3'
 services:
+  postgres:
+    image: parrotstream/postgres:10.5
+    networks:
+    - parrot
+    ports:
+    - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+    privileged: true
+  zookeeper:
+    image: parrotstream/zookeeper:latest
+    networks:
+    - parrot
+    ports:
+    - 2181:2181
+    - 2888:2888
+    - 3888:3888
+  hadoop:
+    image: parrotstream/hadoop:2.8.5
+    links:
+    - zookeeper
+    networks:
+    - parrot
+    ports:
+    - 9870:9870
+    - 9864:9864
+    - 9820:9820
+    - 8042:8042
+    - 8088:8088
+    - 8188:8188
+    - 19888:19888
+  hive:
+    image: parrotstream/hive:2.3.3
+    links:
+    - hadoop
+    - zookeeper
+    - postgres
+    networks:
+    - parrot
+    environment:
+      PGPASSWORD: postgres
+    ports:
+    - 10000:10000
+    - 10001:10001
+    - 10002:10002
+    - 10003:10003
+    - 9083:9083
+    - 50111:50111
+    - 9999:9999
   impala:
     build:
       context: .
@@ -7,9 +56,10 @@ services:
     image: parrotstream/impala:latest
     networks:
     - parrot
-    external_links:
+    links:
     - hadoop
     - hive
+    - zookeeper
     ports:
     - 21000:21000
     - 21050:21050
