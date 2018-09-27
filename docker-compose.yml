@@ -18,7 +18,7 @@ services:
     - 2888:2888
     - 3888:3888
   hadoop:
-    image: parrotstream/hadoop:2.8.5
+    image: parrotstream/hadoop:3.0.3
     links:
     - zookeeper
     networks:
@@ -32,7 +32,7 @@ services:
     - 8188:8188
     - 19888:19888
   hive:
-    image: parrotstream/hive:2.3.3
+    image: parrotstream/hive:3.1.0
     links:
     - hadoop
     - zookeeper
