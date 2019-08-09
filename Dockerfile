@@ -5,7 +5,7 @@ MAINTAINER Matteo Capitanio <matteo.capitanio@gmail.com>
 USER root
 
 ADD cloudera-cdh6.repo /etc/yum.repos.d/
-RUN rpm --import https://archive.cloudera.com/cdh6/6.0.0/redhat7/yum/RPM-GPG-KEY-cloudera
+RUN rpm --import https://archive.cloudera.com/cdh6/6.3.0/redhat7/yum/RPM-GPG-KEY-cloudera
 RUN yum install -y impala impala-server impala-shell impala-catalog impala-state-store
 RUN yum clean all
 
